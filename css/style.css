@@ -1,0 +1,42 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  margin-left: 10px;
+}
+
+form {
+  max-width: 300px;
+  margin: auto;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.masonry {
+  column-count: 4;
+  column-gap: 10px;
+}
+
+.masonry img {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .masonry {
+    column-count: 2;
+  }
+}
