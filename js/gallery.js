@@ -1,13 +1,20 @@
-if (!localStorage.getItem("allImages")) {
-  const demoImages = [
-    { src: "https://picsum.photos/400/600?1", user: "demo" },
-    { src: "https://picsum.photos/400/500?2", user: "demo" },
-    { src: "https://picsum.photos/400/700?3", user: "demo" },
-    { src: "https://picsum.photos/400/650?4", user: "demo" }
-  ];
-  localStorage.setItem("allImages", JSON.stringify(demoImages));
+// 👇 DEMO USER + IMAGES FOR FIRST-TIME VISITORS
+let users = JSON.parse(localStorage.getItem("users")) || {};
+
+if (Object.keys(users).length === 0) {
+  users = {
+    demo: {
+      images: [
+        "https://picsum.photos/400/600?random=1",
+        "https://picsum.photos/400/500?random=2",
+        "https://picsum.photos/400/700?random=3",
+        "https://picsum.photos/400/650?random=4"
+      ]
+    }
+  };
+  localStorage.setItem("users", JSON.stringify(users));
 }
-const users = JSON.parse(localStorage.getItem("users")) || {};
+
 const gallery = document.getElementById("gallery");
 const publicGallery = document.getElementById("publicGallery");
 
