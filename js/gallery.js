@@ -1,4 +1,4 @@
-// 👇 DEMO USER + IMAGES FOR FIRST-TIME VISITORS
+// Demo images for landing page (always visible)
 let users = JSON.parse(localStorage.getItem("users")) || {};
 
 if (Object.keys(users).length === 0) {
@@ -21,8 +21,13 @@ const publicGallery = document.getElementById("publicGallery");
 const params = new URLSearchParams(window.location.search);
 const username = params.get("username");
 
-if (username && users[username]) {
-  document.getElementById("userTitle").innerText = username + "'s Gallery";
+// Public profile page (safe)
+if (username && users[username] && publicGallery) {
+  const title = document.getElementById("userTitle");
+  if (title) {
+    title.innerText = username + "'s Gallery";
+  }
+
   users[username].images.forEach(img => {
     const image = document.createElement("img");
     image.src = img;
@@ -30,6 +35,7 @@ if (username && users[username]) {
   });
 }
 
+// Landing page gallery
 if (gallery) {
   Object.values(users).forEach(user => {
     user.images.forEach(img => {
