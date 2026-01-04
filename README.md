@@ -33,3 +33,13 @@ A responsive frontend web application where artists can upload and showcase digi
 1. Clone the repository:
    ```bash
    git clone https://github.com/rahulbiswas090909/creative-showcase.git
+   
+2. Navigate to the project directory
+
+   cd creative-showcase
+
+3. Run the project
+
+Open index.html directly in any modern web browser
+OR
+Use VS Code Live Server for a better development experience.
